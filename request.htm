@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="Logo9.jpg" class="icon_logo">
+    <link rel="stylesheet" href="request.css">
+    <title>Savvy Cyber</title>
+</head>
+<body>
+
+
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="">Savvy Cyber</a></div>
+            <ul class="links">
+                <li><a href="/savvy cyber/index.html">Home</a></li>
+                <!--<li><a href="/savvy cyber/index.htm/#about">About</a></li>
+                <li><a href="/savvy cyber/index.htm/#progress">Progress</a></li>
+                <li><a href="/savvy cyber/index.htm/#contact">Contacts</a></li>-->
+            </ul>
+            <a href="index.html" class="action_btn">Home</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li> <a href="index.html" class="action_btn">Home</a></li>
+        </div>
+    </header>
+
+    <section class="work">
+        <form id="work-request-form" method="post" action="https://api.web3forms.com/submit">
+            <h2>Work Request Form for Savvy Cyber</h2>
+            <p>Please fill out this form to request a work from us.</p>
+            
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="5455f36e-8361-4364-9fcc-c8cbf70cac04">
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <!-- Custom Confirmation / Success Page -->
+            <input type="hidden" name="from_name" value="Savvy Cyber Website work request section">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success"">
+
+            <!-- Company Information -->  
+            <h3>Company Information</h3>
+            <label for="name">Company Name:</label>
+            <input type="text" id="company-name" name="name" placeholder="Your company name/ Your name" required><br><br>
+
+            <label for="contact_person">Contact Person:</label>
+            <input type="text" id="contact-person" name="contact_person" placeholder="Your name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="eg. +254 000 ..." required><br><br>
+            
+            <!-- Work Details -->
+            <h3>Work Details</h3>
+            <label for="work_type">Type of Work:</label>
+            <select id="work-type" name="work_type" required>
+            <option value="">Select one</option>
+            <option value="designing">Designing</option>
+            <option value="branding">Branding</option>
+            <option value="certificate-printing">Certificate Printing</option>
+            <option value="photocopying">Photocopying</option>
+            </select><br><br>
+
+            <label for="work_description">Work Description:</label>
+            <textarea id="work-description" name="work_description" placeholder="Explain what features or modification you need..." required></textarea>
+
+            <h4>Contact through whatsapp at: <u>+245 710 699 245</u>.</h4><br>
+            
+            <button type="submit">Send</button>
+            
+            <div id="result"></div><br>
+    
+        </form>
+    </section>
+
+
+    <script >
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function (){
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+        }
+    </script>
+
+    
+
+    <!--contact section-->
+    <script>
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+         result.innerHTML = "Please wait..."
+
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    result.innerHTML = "Form submitted successfully";
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message;
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 3000);
+            });
+        });
+    </script>
+
+    
+
+</body>
+</html>

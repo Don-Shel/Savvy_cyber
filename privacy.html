@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <link rel="icon" href="Logo9.jpg" class="icon_logo">
+    <title>Savvy Cyber-Privacy policy</title>
+    <style>
+        /* Add some basic styling to make the page look decent */
+        .privacy h2 {
+          margin-top: 20px;
+        }
+        .privacy p {
+          margin-bottom: 20px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins;
+        }
+        body{
+            background-color: #3d5a80;
+            margin: 20px;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .icon_logo{
+            background-size: 100% 100%;
+            border-radius: 50%;
+        }
+
+        .navbar a{
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        .navbar a:hover{
+            color: orangered;
+        }
+        /* header */
+        header{
+            position: relative;
+            padding-left: -.9rem;
+            z-index: 100;
+        }
+        .navbar{
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            top: -.4rem;
+            left: .5rem;
+            max-width: 98%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            backdrop-filter: blur(10px);
+        
+        }
+
+        .navbar .logo a{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .links{
+            display: flex;
+            gap: 2rem;
+        }
+
+
+        .links li:hover{
+        text-decoration: underline;
+        background-color: #f5a20a;
+        padding: 0.2rem 1rem;
+        border-radius: 35px;
+        font-weight: bold;
+        }
+        .navbar .toggle_btn{
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .action_btn{
+            background-color: rgb(255, 167, 3);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .action_btn:hover{
+            color: rgb(197, 32, 32);
+            scale: 1.02;
+        }
+
+        .action_btn:active{
+            scale: 0.95;
+        }
+
+        .dropdown_menu{
+            display: none;
+            position: absolute;
+            right: 2rem;
+            top: 60px;
+            height: 0;
+            width: 300px;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dropdown_menu.open{
+            height: 125px;
+        }
+
+        .dropdown_menu li{
+            padding: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dropdown_menu a{
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
+        .dropdown_menu a:hover{
+            color: #270501;
+            background-color: #f5a20a;
+            padding: 0.5rem 1rem;
+            border-radius: 35px;
+            font-weight: bold;
+        }
+
+        .dropdown_menu .action_btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* responsiveness*/
+        @media (max-width: 992px) {
+            .navbar .links,
+            .navbar .action_btn{
+                display: none;
+            }
+
+            .navbar .toggle_btn{
+                display: block;
+            }
+
+            .dropdown_menu{
+                display: block;
+            }
+        }
+
+        @media (max-width: 576px){
+            .dropdown_menu{
+                left: 2rem;
+                width: unset;
+            }
+        }
+        .privacy{
+            position: relative;
+            top: 2.4rem;
+            border: 1px solid #0b3b3b;
+            border-radius: 10px;
+            padding: .3rem;
+            background-color: darkcyan;
+            font-size: .8rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="">Savvy Cyber</a></div>
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <a href="request.htm" class="action_btn">Request Services</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="request.htm" class="action_btn">Request Service</a></li>
+        </div>
+    </header>
+
+    <article class="privacy">
+        <section>
+            <h1>Privacy Policy</h1>
+            <p>Savvy Cyber is committed to protecting the privacy and security of our customers, website visitors, and users of our services. This Privacy Policy explains how we collect, use, and protect your personal data.</p>
+            <h2>What Personal Data Do We Collect?</h2>
+            <p>We collect personal data that you provide to us when you:</p>
+            <ul>
+              <li>Visit our website</li>
+              <li>Use our services, including branding, graphic design, photocopying, printing, and certificate printing</li>
+              <li>Contact us through email, phone, or in-person</li>
+              <li>Provide feedback or participate in surveys</li>
+            </ul>
+            <p>The personal data we collect may include:</p>
+            <ul>
+              <li>Name and contact information (email, phone number, address)</li>
+              <li>Business information (company name, job title, industry)</li>
+              <li>Files and documents uploaded to our website or provided to us for printing or design services</li>
+            </ul>
+            <h2>How Do We Use Your Personal Data?</h2>
+            <p>We use your personal data to:</p>
+            <ul>
+              <li>Provide and improve our services, including processing orders and delivering products</li>
+              <li>Communicate with you about your orders, services, and account information</li>
+              <li>Personalize your experience on our website and in our marketing communications</li>
+              <li>Conduct market research and analyze customer behavior</li>
+              <li>Comply with legal and regulatory requirements</li>
+            </ul>
+            <h2>How Do We Protect Your Personal Data?</h2>
+            <p>We take reasonable measures to protect your personal data from unauthorized access, disclosure, alteration, and destruction. These measures include:</p>
+            <ul>
+              <li>Encrypting sensitive data, such as payment information</li>
+              <li>Using secure servers and data storage</li>
+              <li>Implementing access controls and authentication measures</li>
+              <li>Regularly updating and patching our software and systems</li>
+            </ul>
+            <h2>Who Do We Share Your Personal Data With?</h2>
+            <p>We may share your personal data with:</p>
+            <ul>
+              <li>Our service providers, such as payment processors and shipping companies</li>
+              <li>Our business partners, such as suppliers and contractors</li>
+              <li>Law enforcement and regulatory agencies, as required by law</li>
+            </ul>
+            <h2>Your Rights and Choices</h2>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access and correct your personal data</li>
+              <li>Opt-out of marketing communications</li>
+              <li>Request deletion of your personal data</li>
+            </ul>
+            <p>Please contact us if you have any questions or concerns about our Privacy Policy or your personal data.</p>
+            <p>Last updated: 14th July 2024</p>
+          </body>
+        </section>
+    </article>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function (){
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+        }
+    </script>    
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <link rel="icon" href="Logo9.jpg" class="icon_logo">
+    <link rel="stylesheet" href="FAQs.css">
+    <title>Savvy Cyber</title>
+</head>
+<body> 
+    
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="">Savvy Cyber</a></div>
+            <ul class="links">
+              <li><a href="index.htm">Home</a></li>
+            </ul>
+            <a href="request.htm" class="action_btn">Request Services</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="request.htm" class="action_btn">Request Service</a></li>
+        </div>
+    </header>
+
+    <section>
+        <div class="faqs-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faqs-accordion">
+              <div class="faq">
+                <h3>What is Savvy Cyber Company?</h3>
+                <p>Savvy Cyber Company is a leading provider of cybersecurity solutions and services. We specialize in helping businesses protect themselves from cyber threats and data breaches.</p>
+              </div>
+              <div class="faq">
+                <h3>What services does Savvy Cyber Company offer?</h3>
+                <p>We offer a range of services, including penetration testing, vulnerability assessments, incident response, and security consulting. We also provide training and awareness programs for employees.</p>
+              </div>
+              <div class="faq">
+                <h3>How do I get started with Savvy Cyber Company?</h3>
+                <p>To get started, simply contact us through our website or give us a call. We'll be happy to discuss your cybersecurity needs and provide a customized solution.</p>
+              </div>
+              <div class="faq">
+                <h3>What is the cost of Savvy Cyber Company's services?</h3>
+                <p>The cost of our services varies depending on the scope of the project and the level of expertise required. We'll provide a detailed quote and proposal for your review and approval.</p>
+              </div>
+              <div class="faq">
+                <h3>How long does it take to complete a project with Savvy Cyber Company?</h3>
+                <p>The length of time it takes to complete a project varies depending on the scope and complexity of the project. We'll work with you to develop a project timeline and ensure that all deadlines are met.</p>
+              </div>
+            </div>
+          </div>
+    </section>
+
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function (){
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+        }
+
+        // Get the FAQs accordion element
+        const faqsAccordion = document.querySelector('.faqs-accordion');
+
+        // Get the FAQ elements
+        const faqs = document.querySelectorAll('.faq');
+
+        // Add an event listener to each FAQ element
+        faqs.forEach((faq) => {
+        faq.addEventListener('click', () => {
+            // Toggle the FAQ element's active class
+            faq.classList.toggle('active');
+        });
+        });
+    </script>
+</body>
+</html>
